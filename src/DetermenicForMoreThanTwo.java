@@ -47,7 +47,7 @@ public class DetermenicForMoreThanTwo extends Process {
             while (streak != matrixForFormula.size()) {
                 if (koefMap.containsKey((Integer)classMatrix.getKey())) {    //если есть матрица коэффициентов для этого класса
                     double result = formula(matrixForFormula.get(i), (Integer)classMatrix.getKey());
-                    if (result < 0) {
+                    if (result <= 0) {
                         List<Double[]> koefListForClass = koefMap.get((Integer)classMatrix.getKey());
                         koefListForClass.add(matrixForFormula.get(i));
                         koefMap.put((Integer)classMatrix.getKey(), koefListForClass);
@@ -76,7 +76,7 @@ public class DetermenicForMoreThanTwo extends Process {
 
     public void work(Double[] test){
         Double max = 0.0;
-        int maxClass = 0;
+        int maxClass = 1;
         for (Map.Entry koef : koefMap.entrySet()){
             double result = formula(test, (Integer)koef.getKey());
             if (result > max) {

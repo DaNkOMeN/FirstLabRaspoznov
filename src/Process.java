@@ -4,7 +4,7 @@ public abstract class Process {
         String[] stringMas = (line.substring(line.indexOf("\t") + 1)).split("\t");
         Double[] resultMas = new Double[stringMas.length];
         for (int i = 0; i < stringMas.length; i++) {
-            resultMas[i] = Double.parseDouble(stringMas[i]);
+            resultMas[i] = Double.parseDouble(stringMas[i].replace(",", "."));
         }
         return resultMas;
     }

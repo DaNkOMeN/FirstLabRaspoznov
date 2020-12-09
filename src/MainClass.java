@@ -15,10 +15,10 @@ public class MainClass {
         System.out.println("Детерменированный - D : Стохастический - S");
         Scanner in = new Scanner(System.in);
         System.out.println("Введите букву: ");
-        String enter = in.next();
+        String enter = in.nextLine();
         //закомментить, если надоест вводить в клавы
         System.out.println("Введите название файла");
-        String nameFile = in.next();
+        String nameFile = in.nextLine();
         File file = new File(nameFile);
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -36,29 +36,33 @@ public class MainClass {
                 if (howManyClasses > 2) {
                     DetermenicForMoreThanTwo process = new DetermenicForMoreThanTwo(file);
                     process.study();
+                    System.out.println("Введите вектор значения вектора");
                     while (true) {
-                        System.out.println("Введите вектор значения вектора");
-                        String vector = in.next();
+
+                        String vector = in.nextLine();
                         String[] stringMasVector = vector.split(" ");
                         Double[] doubleVector = new Double[stringMasVector.length];
                         for (int i = 0; i < doubleVector.length; i++) {
                             doubleVector[i] = Double.parseDouble(stringMasVector[i]);
                         }
                         process.work(doubleVector);
+                        System.out.println("Введите вектор значения вектора");
                     }
 
                 } else {
                     DetermenicForTwo process = new DetermenicForTwo(file);
                     process.study();
+                    System.out.println("Введите вектор значения вектора");
                     while (true) {
-                        System.out.println("Введите вектор значения вектора");
-                        String vector = in.next();
+
+                        String vector = in.nextLine();
                         String[] stringMasVector = vector.split(" ");
                         Double[] doubleVector = new Double[stringMasVector.length];
                         for (int i = 0; i < doubleVector.length; i++) {
                             doubleVector[i] = Double.parseDouble(stringMasVector[i]);
                         }
                         process.work(doubleVector);
+                        System.out.println("Введите вектор значения вектора");
                     }
                 }
             } else {
@@ -66,7 +70,7 @@ public class MainClass {
                 process.study();
                 while (true) {
                     System.out.println("Введите вектор значения вектора");
-                    String vector = in.next();
+                    String vector = in.nextLine();
                     String[] stringMasVector = vector.split(" ");
                     Double[] doubleVector = new Double[stringMasVector.length];
                     for (int i = 0; i < doubleVector.length; i++) {
